@@ -18,7 +18,9 @@
 >
 > src</br>
 >> assets 放置一些图片或者css文件 不做演示
+>>
 >> components 组件
+>>
 >> config 全局配置
 >>> asdf
 >>> fff
