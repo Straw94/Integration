@@ -9,8 +9,9 @@
   全局方法封装等...
 
 
-## Setup 
+## Setup
 ``` bash
+## Setup
 # install dependencies
 npm install
 
@@ -21,9 +22,6 @@ npm run dev
 cd node-server
 npm install
 node index.js
-
-
-
 
 ## Build Setup
 
