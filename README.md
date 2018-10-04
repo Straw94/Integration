@@ -1,6 +1,22 @@
 # vue-integration
 
-> A Vue.js project
+> vue-cli + elementui + axios
+> 大型项目架构
+
+
+
+## Setup 
+# install dependencies 
+npm install
+npm run dev
+
+# install node dependencies
+cd node-server
+npm install
+node index.js
+
+
+
 
 ## Build Setup
 
