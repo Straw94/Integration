@@ -2,7 +2,8 @@
 
 const obj = {
     fnTest: (val) => {
-        console.log("commonFntest: " + val)
+        console.log("commonFntest: " + val);
+    	return 'globalFn success!!!';
     }
 }
 

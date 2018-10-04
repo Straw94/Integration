@@ -2,14 +2,16 @@ import https from './testListen'
 
 
 const state = {
-  test:'Test/state/testvalue'
+  test:'BeforeHtppState',
+  stateCommit: 'stateCommitBefore'
 }
 
 
 
 // getters
 const getters = { 
-  testGetters: state => state.test
+  testGetters: state => state.test,
+  stateCommit: state => state.stateCommit
 }
 
 
@@ -19,11 +21,8 @@ const getters = {
 const actions = {
     testActions ({ state, commit }, product) {
         https.testListen().then(res=>{
-            console.log(res)
+            commit('testMutations', res.data.data)
         })
-        console.log(state)
-        console.log(commit)
-        console.log(product)
     }
 }
 
@@ -31,10 +30,13 @@ const actions = {
 
 // mutations
 const mutations = {
+    // Mutations 的函数名区分推荐  ------- https://vuex.vuejs.org/guide/mutations.html
     testMutations (state, status) {
-        // state.checkoutStatus = status
-        console.log(state)
-        console.log(status)
+        state.test = `author: ${status.author}  age: ${status.age}  message: ${status.msg}`
+    },
+
+    mutationsTest (state, status) {
+        state.stateCommit = state.stateCommit == 'stateCommitChange' ? 'stateCommitBefore' : 'stateCommitChange'
     }
 }
 

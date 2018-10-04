@@ -3,9 +3,7 @@ import http from '../../../plugin/http/index'
 
 const obj = {
     testListen(){
-        return new Promise((resolve,reject) =>{
-            resolve('success')
-        })
+        return http.get('/api/vuexTest')
     }
 }
 

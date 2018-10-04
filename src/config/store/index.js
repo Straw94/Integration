@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Test from './test'
 import Test1 from './test1'
+import Test2 from './test2'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-    Test,
-    Test1
+    Test1,
+    
+    // 只是提供参考范例、 再项目中并未使用
+    Test2
   }
-//   strict: debug,
-//   plugins: debug ? [createLogger()] : []
 })

@@ -42,5 +42,10 @@ app.get('/api/httpGetTest', async function(req,res) {
     res.send(result.data)
 })
 
+app.get('/api/vuexTest', async function(req,res) {
+    var data = req.body;
+    var result = await getHttp();
+    res.send(result.data)
+})
 
 app.listen(3030)

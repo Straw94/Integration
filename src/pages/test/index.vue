@@ -1,10 +1,30 @@
 <template>
 <div>
-    <el-button @click='commonPlugin'>全局插件方法</el-button>
-    <el-button>{{ testGetters }}</el-button>
-    <el-button>Vuex</el-button>
-    <el-button @click='state'>testState</el-button>
-    <el-button @click='actions'>testActions</el-button>
+    <el-card style='width: 80%; margin: 0 auto;' class="box-card">
+        <div slot="header" class="clearfix">
+            <span>全局插件方法</span>
+        </div>
+        <el-button @click='commonPlugin'>click</el-button>
+        <div style='margin: 20px auto;'>
+            {{ globalFn }}
+        </div>
+    </el-card>
+    <el-card style='width: 80%; margin: 20px auto;' class="box-card">
+        <div slot="header" class="clearfix">
+            <span>Vuex</span>
+        </div>
+        <div style='margin: 10px;'>
+            <el-button>{{ testGetters }}</el-button>
+        </div>
+        <div style='margin: 10px;'>
+            <el-button @click='state'>{{ stateCommit }}</el-button>
+        </div>
+        <div style='margin: 10px;'>
+            <el-button @click='actions'>ActionsChange</el-button>
+        </div>
+    </el-card>
+
+
     <test-com></test-com>
 </div>
 </template>
@@ -13,6 +33,7 @@ import { mapGetters } from 'vuex'
 export default {
     data(){
         return {
+            globalFn: 'globalFn',
             msg:111
         }
     },
@@ -22,11 +43,11 @@ export default {
         },
 
         state(){
-            console.log(this.$store.state.Test)
+            this.$store.commit('mutationsTest');
         },
 
         commonPlugin(){
-            this.$comobj.fnTest('commonPlugin')
+            this.globalFn = this.$comobj.fnTest('commonPlugin');
         }
     },
     mounted(){
@@ -36,7 +57,8 @@ export default {
     },
     computed:{
         ...mapGetters({
-            testGetters:'testGetters'
+            testGetters:'testGetters',
+            stateCommit: "stateCommit"
         })
     }
 }
