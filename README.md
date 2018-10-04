@@ -14,6 +14,15 @@
 >> vue-cli 相关build配置文件
 >
 > node-server</br>
+>> node服务 主要测试axios 的http请求封装
+>
+> src</br>
+>> assets 放置一些图片或者css文件 不做演示
+>> components 组件
+>> config 全局配置
+>>> asdf
+>>> fff
+
 
 
 ## Setup
