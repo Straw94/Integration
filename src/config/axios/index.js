@@ -2,8 +2,7 @@
 const config = {
     // 全局配置
     base:{
-        // baseurl:'http://172.20.10.2:9091',
-        baseurl:'localhost:9091',
+        baseurl:'http://localhost:9091',
         token:'testtoken'
     },
     // 错误信息
