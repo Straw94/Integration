@@ -1,6 +1,12 @@
 # vue-integration
 
-> vue-cli + elementui + axios  大型项目架构  包括axios相关错误处理、  elementUI http请求loading  全局组件注册、   Vuex使用示例、   全局方法封装等...
+vue-cli + elementui + axios
+  大型项目架构
+  包括axios相关错误处理
+  elementUI http请求loading
+  全局组件注册
+  Vuex使用示例
+  全局方法封装等...
 
 
 ## Setup 
