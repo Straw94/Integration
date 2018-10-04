@@ -1,4 +1,4 @@
-# vue-career
+# vue-integration
 
 > A Vue.js project
 
