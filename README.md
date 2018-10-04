@@ -8,6 +8,12 @@
   Vuex使用示例</br>
   全局方法封装等...
 
+# 目录结构
+```
+> build && config</br>
+>> vue-cli 相关build配置文件
+> node-server</br>
+
 
 ## Setup
 ``` bash
