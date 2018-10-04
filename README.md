@@ -23,9 +23,13 @@
 >>
 >> config 全局配置
 >>> axios --- axios一些简单配置
+>>>
 >>> globalFn --- 全局方法（尽量遵从函数式编程思想）
+>>>
 >>> register --- 全局组件注册
+>>>
 >>> router   --- 路由配置
+>>>
 >>> store    --- vuex 配置
 
 
