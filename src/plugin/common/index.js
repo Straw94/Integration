@@ -14,6 +14,8 @@ const configPlugin = {
     //     }
     //   }
     // })
+
+    // 全局组件注册
     options.ComponentRegister.map(val => {
       Vue.component(val.name,val.template)
     })

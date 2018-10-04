@@ -30,7 +30,7 @@ export default {
         }
     },
     mounted(){
-        this.$http.get('/test/exception',{params:{username:23123}}).then(res=>{
+        this.$http.get('/api/httpGetTest').then(res=>{
             console.log(res)
         })
     },

@@ -3,25 +3,27 @@ import { Loading, Notification } from 'element-ui'
 // axios 配置
 import configs from '../../config/axios'
 
-axios.defaults.baseURL = configs.base.baseurl
-axios.defaults.headers.common['Authorization'] = configs.base.token
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 
+
+axios.defaults.baseURL = configs.base.baseurl;
+// axios.defaults.headers.common['Authorization'] = configs.base.token;
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
+
+
+
+let time = configs.base.time;
 let loadId = ''
 let loadingClose = ''
-
-
 
 // 添加请求拦截器
 axios.interceptors.request.use((config) => {
     loadId = setTimeout(()=>{
         loadingClose = Loading.service(configs.loading)
-    },5000)
+    },time)
     return config;
   }, (error) => {
-    loadClose()
-    clearTimeout(loadId)
     notiMsg()
     return Promise.reject(error);
   });
@@ -31,27 +33,19 @@ axios.interceptors.request.use((config) => {
 // 添加响应拦截器
 axios.interceptors.response.use((response) => {
     if(!response.data.status) notiMsg(response.data)
-    clearTimeout(loadId)
+    loadClose()
     return response;
   }, (error) => {
-    loadClose()
-    clearTimeout(loadId)
-    notiMsg()
+    notiMsg();
     return Promise.reject(error);
 });
 
 
-// 关闭对话框
-function loadClose(){
-    try {
-        loadingClose.close()
-    } catch(err){
 
-    }
-}
 
 // 错误信息
 function notiMsg(data){
+    loadClose();
     if (!data) {
         Notification(configs.errmsg)
     } else {
@@ -59,5 +53,15 @@ function notiMsg(data){
     }
 }
 
+
+// 关闭对话框
+function loadClose(){
+    try {
+        loadingClose.close();
+        clearTimeout(loadId);
+    } catch(err){
+
+    }
+}
 
 export default axios
