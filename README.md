@@ -31,6 +31,16 @@
 >>> router   --- 路由配置
 >>>
 >>> store    --- vuex 配置
+>
+> pages
+>> pages目录 可以做业务模块划分
+>
+> plugin
+>> common
+>>> 通过vue.install 添加vue原型属性
+>>
+>> http
+>>> axios 配置
 
 
 
