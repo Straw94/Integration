@@ -57,7 +57,7 @@ function notiMsg(data){
 // 关闭对话框
 function loadClose(){
     try {
-        loadingClose.close();
+        loadingClose && loadingClose.close();
         clearTimeout(loadId);
     } catch(err){
 
